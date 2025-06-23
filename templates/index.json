@@ -149,11 +149,13 @@
       ],
       "name": "Swiper product",
       "settings": {
-        "slides_per_view_desktop": 4,
-        "slides_per_view_tab": 2,
-        "slides_per_view_mob": 1,
-        "space_between_slides": 40,
-        "show_pagination": false,
+        "slides_per_view_desktop": 6,
+        "space_between_desktop": 16,
+        "slides_per_view_tablet": 4,
+        "space_between_tablet": 16,
+        "slides_per_view_mobile": 2,
+        "space_between_mobile": 10,
+        "show_pagination": true,
         "show_navigation": true
       }
     }
