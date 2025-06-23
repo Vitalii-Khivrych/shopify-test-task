@@ -9,9 +9,10 @@
             {% assign product = block.settings.proposal_product %}
 
             <li class="swiper-slide" data-color="{{ product.featured_image.alt | escape }}">
+              <a href="{{ product.url }}" class="slider-item__link"></a>
               <img
-                src="{{ product | image_url: width: 450 }}"
-                alt="{{ product.featured_image.alt | escape }}"
+                src="{{ product.featured_image | image_url: width: 450 }}"
+                alt="{{ product.featured_image.alt | default: product.title }}"
                 width="100"
                 height="200"
               >
@@ -90,6 +91,14 @@
   div.swiper-button-next,
   div.swiper-button-prev {
     display: block;
+  }
+  a.slider-item__link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
   }
 {%- endstyle -%}
 
