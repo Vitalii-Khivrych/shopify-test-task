@@ -35,36 +35,37 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -72,13 +73,94 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "product_gallery_iCHjHa": {
+      "type": "product-gallery",
+      "blocks": {
+        "product_78h7hF": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes-1"
+          }
+        },
+        "product_6YxjiW": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "navy-blue-classic-canvas-pumps"
+          }
+        },
+        "product_QnELkD": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes"
+          }
+        },
+        "product_XTEYtm": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes-1"
+          }
+        },
+        "product_ehENjB": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes"
+          }
+        },
+        "product_4x97zP": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "navy-blue-classic-canvas-pumps"
+          }
+        },
+        "product_ym6bW4": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes-1"
+          }
+        },
+        "product_FhYQCK": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "navy-blue-classic-canvas-pumps"
+          }
+        },
+        "product_FKYwMm": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "black-apron-front-shoes"
+          }
+        }
+      },
+      "block_order": [
+        "product_78h7hF",
+        "product_6YxjiW",
+        "product_QnELkD",
+        "product_XTEYtm",
+        "product_ehENjB",
+        "product_4x97zP",
+        "product_ym6bW4",
+        "product_FhYQCK",
+        "product_FKYwMm"
+      ],
+      "name": "Swiper product",
+      "settings": {
+        "slides_per_view_desktop": 4,
+        "slides_per_view_tab": 2,
+        "slides_per_view_mob": 1,
+        "space_between_slides": 40,
+        "show_pagination": false,
+        "show_navigation": true
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "product_gallery_iCHjHa"
   ]
 }
