@@ -33,12 +33,12 @@
       {%- if section.settings.show_pagination -%}
         <div class="swiper-pagination"></div>
       {%- endif -%}
-
-      {%- if section.settings.show_navigation -%}
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      {%- endif -%}
     </div>
+
+    {%- if section.settings.show_navigation -%}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    {%- endif -%}
   </div>
 {% endif %}
 
@@ -86,21 +86,7 @@
   });
 </script>
 
-{%- style -%}
-  .swiper-container .swiper-pagination,
-  div.swiper-button-next,
-  div.swiper-button-prev {
-    display: block;
-  }
-  a.slider-item__link {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    cursor: pointer;
-  }
-{%- endstyle -%}
+{{ 'product-gallery.css' | asset_url | stylesheet_tag }}
 
 {% schema %}
 {

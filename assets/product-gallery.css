@@ -1,0 +1,164 @@
+.product-gallery-swiper {
+  padding: 2rem 0;
+}
+
+.product-gallery-swiper h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--color-accent, #5c5c5c);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+div.swiper {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+}
+
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider-item__title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 0.75rem;
+}
+
+.slider-item__content + div p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.slider-item__price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-price, #222);
+  margin-top: 0.5rem;
+}
+
+div.swiper-button-next,
+div.swiper-button-prev {
+  opacity: 1;
+  display: block;
+  color: #5c5c5c;
+  background: #f7f7f7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #5c5c5c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 50%;
+  transform: translateY(-50%);
+}
+div.swiper-button-next {
+  right: 0;
+}
+div.swiper-button-prev {
+  left: 44px;
+}
+
+div.swiper-button-next:after,
+div.swiper-button-prev:after {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.swiper-button-next:hover,
+div.swiper-button-prev:hover {
+  opacity: 0.8;
+  transition-duration: 300;
+}
+
+div.swiper-pagination {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: #5c5c5c;
+}
+
+a.slider-item__link {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .swiper-slide {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  div.swiper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 30px;
+  }
+
+  div.swiper-button-next,
+  div.swiper-button-prev {
+    top: 82%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .swiper-slide {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  div.swiper {
+    margin-right: 44px;
+    margin-left: 44px;
+    padding-bottom: 30px;
+  }
+
+  div.swiper-button-next,
+  div.swiper-button-prev {
+    width: 44px;
+  }
+}

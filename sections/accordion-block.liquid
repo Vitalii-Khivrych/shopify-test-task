@@ -5,12 +5,12 @@
 
 {% if accordion_titles.size > 0 and accordion_descriptions.size > 0 %}
   <div
-    class="product-accordion"
+    class="product-accordion page-width"
     data-allow-multiple="{{ product.metafields.custom.allow_multiple_open.value | default: 'false' }}"
   >
     {% for title in accordion_titles %}
       {%- assign forloop_index = forloop.index0 -%}
-      {%- assign description = accordion_descriptions -%}
+      {%- assign description = accordion_descriptions[forloop_index] -%}
 
       {%- if title != blank and description != blank -%}
         <div class="accordion-item">
@@ -31,40 +31,41 @@
 
 {% style %}
   .product-accordion {
-    margin-top: 2rem;
-    border-top: 1px solid #e5e5e5;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .accordion-item {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .accordion-title {
     width: 100%;
-    padding: 15px 10px;
+    padding: 1.2rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left;
-    background-color: transparent;
+    background: transparent;
     border: none;
-    cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
+    cursor: pointer;
+    color: var(--color-foreground, #1c1c1c);
+    transition: background 0.3s ease;
   }
 
   .accordion-title:hover {
-    background-color: #f9f9f9;
+    background-color: rgba(243, 243, 243, 0.6);
   }
 
   .accordion-icon {
-    width: 12px;
-    height: 12px;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
     transform: rotate(45deg);
     transition: transform 0.3s ease-in-out;
-    margin-left: 15px;
+    margin-left: 1rem;
   }
 
   .accordion-title[aria-expanded='true'] .accordion-icon {
@@ -74,17 +75,51 @@
   .accordion-content {
     overflow: hidden;
     transition:
-      max-height 0.4s ease-in-out,
-      padding 0.4s ease-in-out;
+      max-height 0.4s ease,
+      padding 0.4s ease;
     max-height: 0;
-    padding: 0 10px;
+    padding: 0 1rem;
   }
 
   .accordion-content:not([hidden]) {
     max-height: 1000px;
+    padding: 1rem;
   }
 
   .accordion-content-inner {
-    padding-bottom: 20px;
+    padding-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary, #4a4a4a);
+  }
+
+  .accordion-content-inner h3,
+  .accordion-content-inner h4 {
+    color: var(--color-accent, #3a3a3a);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .accordion-title {
+      font-size: 1rem;
+      padding: 1rem 0.75rem;
+    }
+
+    .accordion-content-inner {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .accordion-title {
+      font-size: 0.95rem;
+      padding: 0.75rem 0.5rem;
+    }
+
+    .accordion-content-inner {
+      font-size: 0.85rem;
+    }
   }
 {% endstyle %}
