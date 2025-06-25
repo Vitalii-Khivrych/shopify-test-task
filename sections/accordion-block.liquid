@@ -1,0 +1,90 @@
+<script src="{{ 'accordion-block.js' | asset_url }}" defer="defer"></script>
+
+{%- assign accordion_titles = product.metafields.custom.accordion_titles.value -%}
+{%- assign accordion_descriptions = product.metafields.custom.accordion_descriptions.value -%}
+
+{% if accordion_titles.size > 0 and accordion_descriptions.size > 0 %}
+  <div
+    class="product-accordion"
+    data-allow-multiple="{{ product.metafields.custom.allow_multiple_open.value | default: 'false' }}"
+  >
+    {% for title in accordion_titles %}
+      {%- assign forloop_index = forloop.index0 -%}
+      {%- assign description = accordion_descriptions -%}
+
+      {%- if title != blank and description != blank -%}
+        <div class="accordion-item">
+          <button class="accordion-title" aria-expanded="false">
+            <span>{{ title }}</span>
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-content" hidden>
+            <div class="accordion-content-inner">
+              {{ description }}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% style %}
+  .product-accordion {
+    margin-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .accordion-title {
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .accordion-title:hover {
+    background-color: #f9f9f9;
+  }
+
+  .accordion-icon {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px;
+  }
+
+  .accordion-title[aria-expanded='true'] .accordion-icon {
+    transform: rotate(-135deg);
+  }
+
+  .accordion-content {
+    overflow: hidden;
+    transition:
+      max-height 0.4s ease-in-out,
+      padding 0.4s ease-in-out;
+    max-height: 0;
+    padding: 0 10px;
+  }
+
+  .accordion-content:not([hidden]) {
+    max-height: 1000px;
+  }
+
+  .accordion-content-inner {
+    padding-bottom: 20px;
+  }
+{% endstyle %}

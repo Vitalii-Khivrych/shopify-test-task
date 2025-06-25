@@ -99,10 +99,18 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "accordion_block_PDmhrt": {
+      "type": "accordion-block",
+      "name": "Accordion",
+      "settings": {
+        "accordion_allow_multiple_open": false
+      }
     }
   },
   "order": [
     "main",
+    "accordion_block_PDmhrt",
     "related-products"
   ]
 }
