@@ -1,3 +1,7 @@
+.page-width {
+  position: relative;
+}
+
 .product-gallery-swiper {
   padding: 2rem 0;
 }
@@ -140,7 +144,13 @@ a.slider-item__link {
 
   div.swiper-button-next,
   div.swiper-button-prev {
-    top: 82%;
+    top: 101%;
+  }
+  div.swiper-button-next {
+    right: 10px;
+  }
+  div.swiper-button-prev {
+    left: 10px;
   }
 }
 
